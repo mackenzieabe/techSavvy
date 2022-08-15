@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS techSavvy_db;
+
+CREATE DATABASE techSavvy_db;
