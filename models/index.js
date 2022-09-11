@@ -1,7 +1,7 @@
 const Post = require ('./Post');
 const User = require ('./User');
 const Comment = require('./Comments');
-const { ValidationError } = require('sequelize/types');
+// const { ValidationError } = require('sequelize/types');
 
 User.hasMany(Post, {
     foreignKey: 'user_id'

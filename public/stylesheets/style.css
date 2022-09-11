@@ -1,0 +1,57 @@
+body {
+    font-family: "Raleway", sans-serif;
+}
+/* #new-post-link{
+    text-decoration: none;
+    margin:auto;
+    font-size: 30px;
+}
+
+#new-post-page{
+    padding:3%;
+}
+*/
+
+#create-post {
+
+    padding: 20px;
+    width: 200px;
+    height: 150px;
+    color: rgb(16, 15, 15);
+    font-size: 15px;
+}
+  
+
+.title {
+    box-shadow: 10px 5px 5px grey;
+    padding: 2%;
+    color: rgb(16, 15, 15)
+} 
+#new-post-link{
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 10px 5px 5px rgb(15, 61, 62);
+    font-size: 30px;
+    border-radius: 25px;
+    color:rgb(15, 61, 62);
+    padding: 1.5%;
+    display: flex;
+    justify-content: center;
+} 
+
+/* #text-input{
+    border-radius: 15px;
+}
+#link-input{
+    border-radius: 15px;
+} */
+
+#post-input{
+    display: block;
+    justify-content: space-between;
+}
+
+#create-btn{
+   margin: auto;
+   padding: 2%;
+}

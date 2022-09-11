@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechSavvy</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Libre+Bodoni:ital@0;1&family=Montserrat&family=Nanum+Myeongjo&family=Raleway&family=Slabo+27px&family=Tajawal:wght@300&family=Titillium+Web&display=swap">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item">Home</a>
+        <a class="navbar-item" href="/dashboard">
+          Dashboard
+        </a>
+        <a class="navbar-item">
+          Logout
+        </a>
+      </div>
+    </div>
+    </div>
+  </nav>
+
+  <header>
+    <h1 class="title">TechSavvy</h1>
+  </header>
+  {{!-- <div class="wrapper">
+    <header>
+      <h1>
+        <a href="/">TechSavvy</a>
+      </h1> --}}
+      {{!-- <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">TechSavvy</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link active" aria-current="page" href="/dashboard">Dashboard</a>
+              <a class="nav-link" href="#">Logout</a> --}}
+              {{!-- {{#if loggedIn}}
+              <a href="/dashboard">dashboard</a>
+              <button id="logout" class="btn-no-style">logout</button>
+              {{else}}
+              <a href="/login">login</a>
+              {{/if}} --}}
+      
+      {{!--
+    </header> --}}
+    <main>
+      {{{ body }}}
+    </main>
+
+  </div>
+
+  {{#if loggedIn}}
+  <script src="/javascript/logout.js"></script>
+  {{/if}}
+</body>
+
+</html>

@@ -1,38 +1,39 @@
-const { Model, Datatypes } = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+// create our Post model
+class Post extends Model {}
 
-class Post extends Model { }
-
+// create fields/columns for Post model
 Post.init(
-    {
-        id: {
-            type: Datatypes.INTEGER,
-            allowNull: false,
-            primaryKey: true,
-            autoIncrement: true
-        },
-        title: {
-            type: Datatypes.STRING,
-            allowNull: false
-        },
-        post_text: {
-            type: Datatypes.STRING,
-            allowNull: true
-        },
-        user_id: {
-            type: Datatypes.INTEGER,
-            regerences: {
-                model: 'user',
-                key: 'id'
-            }
-        }
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true
     },
-    {
-        sequelize,
-        freezeTableName: true,
-        underscored: true,
-        modelName: 'post'
+    title: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    post_text: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'id'
+      }
     }
+  },
+  {
+    sequelize,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'post'
+  }
 );
 
 module.exports = Post;

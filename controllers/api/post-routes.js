@@ -1,19 +1,12 @@
 const router = require('express').Router();
-const { where } = require('sequelize/types');
 const sequelize = require('../../config/connection');
 const { Post, User, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
-const { post } = require('./comment-routes');
 
-router.get('/', (req, res) => {
+
+router.get('/',withAuth, (req, res) => {
     console.log('getting posts');
     Post.findAll({
-        attributes: [
-            'id',
-            'title',
-            'post_text',
-            'created_at'
-        ],
         include: [
             {
                 model: Comment,
@@ -36,7 +29,7 @@ router.get('/', (req, res) => {
         });
 });
 
-router.get('/:id', (req, res) => {
+router.get('/:id',withAuth, (req, res) => {
     Post.findOne({
         where: {
             id: req.params.id
@@ -89,10 +82,8 @@ router.post('/', withAuth, (req, res) => {
 });
 
 router.put('/:id', withAuth, (req, res) => {
-    Post.update(
-        {
-            title: req.body.title
-        },
+    console.log(req.body);
+    Post.update(req.body, 
         {
             where: {
                 id: req.params.id

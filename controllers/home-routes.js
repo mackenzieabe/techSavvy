@@ -29,7 +29,7 @@ router.get('/', (req, res) => {
     .then(dbPostData => {
         const posts = dbPostData.map(post => post.get ({ plain: true}));
 
-        res.render('homepage', {
+        res.render('all-posts', {
             posts,
             loggedIn: req.session.loggedIn
         });
@@ -40,3 +40,30 @@ router.get('/', (req, res) => {
     });
 });
 
+router.get("/login", (req, res) => {
+    if(req.session.loggedIn) {
+        res.redirect('/')
+        return
+    }
+    res.render('login')
+})
+
+router.get('/post/:id', (req, res) => {
+    Post.findByPk(req.params.id, {
+        include: [
+            User,
+            {
+                model: Comment,
+                include: [User]
+            }
+        ]
+    }).then(dbData => {
+        let post = dbData.get({plain: true})
+        console.log(post)
+        res.render("single-post", {post})
+    }).catch(err => {
+        res.json(err)
+    })
+})
+
+module.exports = router;

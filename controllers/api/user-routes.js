@@ -1,6 +1,6 @@
-const require = require('express').Router();
+const router = require('express').Router();
 const { User, Post, Comment } = require('../../models');
-const router = require('./comment-routes');
+
 
 
 router.get('/', (req, res) => {
