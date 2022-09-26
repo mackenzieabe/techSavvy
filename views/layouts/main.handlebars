@@ -7,7 +7,7 @@
   <title>TechSavvy</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Libre+Bodoni:ital@0;1&family=Montserrat&family=Nanum+Myeongjo&family=Raleway&family=Slabo+27px&family=Tajawal:wght@300&family=Titillium+Web&display=swap">
-  <link rel="stylesheet" href="/stylesheets/style.css">
+  {{!-- <link rel="stylesheet" href="/stylesheets/style.css"> --}}
 </head>
 
 <body>
@@ -26,6 +26,12 @@
         <a class="navbar-item" href="/dashboard">
           Dashboard
         </a>
+         {{#if loggedIn}}
+              <a href="/dashboard">dashboard</a>
+              <button id="logout" class="btn-no-style">logout</button>
+              {{else}}
+              <a href="/login">login</a>
+              {{/if}}
         <a class="navbar-item">
           Logout
         </a>
@@ -34,15 +40,15 @@
     </div>
   </nav>
 
-  <header>
+  {{!-- <header>
     <h1 class="title">TechSavvy</h1>
   </header>
-  {{!-- <div class="wrapper">
+  <div class="wrapper">
     <header>
       <h1>
         <a href="/">TechSavvy</a>
-      </h1> --}}
-      {{!-- <nav class="navbar navbar-expand-lg bg-light">
+      </h1>
+      <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">TechSavvy</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
@@ -58,10 +64,10 @@
               <button id="logout" class="btn-no-style">logout</button>
               {{else}}
               <a href="/login">login</a>
-              {{/if}} --}}
+              {{/if}}
+       --}}
       
-      {{!--
-    </header> --}}
+    </header>
     <main>
       {{{ body }}}
     </main>
